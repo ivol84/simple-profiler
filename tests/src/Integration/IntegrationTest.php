@@ -15,17 +15,18 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
     {
         Profiler::addListener(new StreamOutputListener(fopen('php://stdout', 'w')));
         $timerObject = new TimerTestObject();
+        $timer = Timer::start("Test timer");
         $timerObject->implicitWaitWithMemoryEating();
+        $timer->stop();
     }
 }
 
 class TimerTestObject {
+    private $matrix;
     public function implicitWaitWithMemoryEating()
     {
-        $timer = Timer::start("Test timer");
-        $matrix = $this->zeros(795,6942);
+        $this->matrix = $this->zeros(795,6942);
         sleep(10);
-        $timer->stop();
     }
 
     private function zeros($rowCount, $colCount){
