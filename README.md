@@ -1,5 +1,6 @@
 simple-profiler
 ============
+![Build Status](https://travis-ci.com/ivol84/simple-profiler.svg?branch=master)
 
 Simple profiler provides a simple and configurable way to profile your code. 
 
