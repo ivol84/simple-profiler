@@ -9,8 +9,11 @@ class Profiler
 {
     /** @var TimerListenerInterface[] */
     private static $listeners = [];
-    private static $timers = [];
-    private static $counters = [];
+
+    public static function create()
+    {
+        return new self();
+    }
 
     public static function addListener(ListenerInterface $listener)
     {
@@ -22,7 +25,7 @@ class Profiler
         unset(self::$listeners[spl_object_hash($listener)]);
     }
 
-    public static function fire(Event $event)
+    public function fire(Event $event)
     {
         array_walk(self::$listeners, function (ListenerInterface $listener) use ($event) {
             if($listener->isSupported($event)) {

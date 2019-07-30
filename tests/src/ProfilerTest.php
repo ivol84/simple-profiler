@@ -1,11 +1,9 @@
 <?php
 namespace SimpleProfiler;
 
-
 use SimpleProfiler\Event\Event;
 use SimpleProfiler\Event\TimerEvent;
 use SimpleProfiler\Listener\ListenerInterface;
-use SimpleProfiler\Profiler;
 
 class ProfilerTest extends \PHPUnit_Framework_TestCase
 {
@@ -17,7 +15,7 @@ class ProfilerTest extends \PHPUnit_Framework_TestCase
         Profiler::addListener($this->createListener(true));
         Profiler::addListener($this->createListener(false));
 
-        Profiler::fire(new TimerEvent("test", 0, 0));
+        Profiler::create()->fire(new TimerEvent("test", 0, 0, 0));
     }
 
     private function createListener($isSupported)

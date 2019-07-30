@@ -6,33 +6,39 @@ class TimerEvent extends Event
     /** @var int */
     private $totalTime;
     /** @var int */
-    private $memoryUsage;
+    private $memoryPeakUsage;
+    /** @var int */
+    private $memoryRealUsage;
+
 
     /**
      * TimerEvent constructor.
-     * @param $totalTime
-     * @param $memoryUsage
+     * @param string $name
+     * @param int $totalTime
+     * @param int $memoryPeakUsage
+     * @param int $memoryRealUsage
      */
-    public function __construct($name, $totalTime, $memoryUsage)
+    public function __construct($name, $totalTime, $memoryPeakUsage, $memoryRealUsage)
     {
         parent::__construct($name);
         $this->totalTime = $totalTime;
-        $this->memoryUsage = $memoryUsage;
+        $this->memoryPeakUsage = $memoryPeakUsage;
+        $this->memoryRealUsage = $memoryRealUsage;
     }
 
     /**
      * @return int
      */
-    public function getTotalTime()
+    public function getMemoryPeakUsage()
     {
-        return $this->totalTime;
+        return $this->memoryPeakUsage;
     }
 
     /**
      * @return int
      */
-    public function getMemoryUsage()
+    public function getMemoryRealUsage()
     {
-        return $this->memoryUsage;
+        return $this->memoryRealUsage;
     }
 }
