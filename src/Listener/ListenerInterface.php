@@ -1,8 +1,8 @@
 <?php
 
-namespace ivol\profiler\Listener;
+namespace SimpleProfiler\Listener;
 
-use ivol\profiler\Event\Event;
+use SimpleProfiler\Event\Event;
 
 interface ListenerInterface
 {

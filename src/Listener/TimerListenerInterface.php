@@ -1,5 +1,5 @@
 <?php
-namespace ivol\profiler\Listener;
+namespace SimpleProfiler\Listener;
 
 interface TimerListenerInterface extends ListenerInterface
 {}

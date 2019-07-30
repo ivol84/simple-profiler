@@ -1,9 +1,9 @@
 <?php
 
-namespace ivol\profiler;
+namespace SimpleProfiler;
 
-use ivol\profiler\Event\Event;
-use ivol\profiler\Listener\ListenerInterface;
+use SimpleProfiler\Event\Event;
+use SimpleProfiler\Listener\ListenerInterface;
 
 class Profiler
 {

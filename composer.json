@@ -13,8 +13,7 @@
   "autoload": {
     "psr-4":
     {
-      "ivol\\profiler\\": "src/",
-      "ivol\\tests\\": "tests/src/"
+      "SimpleProfiler\\": ["src/", "tests/src/"]
     }
   },
   "require-dev": {

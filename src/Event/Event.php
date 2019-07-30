@@ -1,5 +1,5 @@
 <?php
-namespace ivol\profiler\Event;
+namespace SimpleProfiler\Event;
 
 
 abstract class Event

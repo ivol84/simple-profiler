@@ -1,11 +1,11 @@
 <?php
-namespace ivol\tests;
+namespace SimpleProfiler;
 
 
-use ivol\profiler\Event\Event;
-use ivol\profiler\Event\TimerEvent;
-use ivol\profiler\Listener\ListenerInterface;
-use ivol\profiler\Profiler;
+use SimpleProfiler\Event\Event;
+use SimpleProfiler\Event\TimerEvent;
+use SimpleProfiler\Listener\ListenerInterface;
+use SimpleProfiler\Profiler;
 
 class ProfilerTest extends \PHPUnit_Framework_TestCase
 {
