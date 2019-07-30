@@ -13,7 +13,7 @@ sudo: false
 
 before_script:
   # https://github.com/symfony/symfony/issues/4687
-  - composer update --dev --no-interaction --prefer-source $PREFER_LOWEST
+  - composer update --no-interaction --prefer-source $PREFER_LOWEST
 
 script:
   - php vendor/bin/phpunit

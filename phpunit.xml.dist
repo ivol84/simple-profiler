@@ -13,7 +13,7 @@
         bootstrap="tests/bootstrap.php">
     <testsuites>
         <testsuite name="main">
-            <directory>./test/</directory>
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
     <!-- Whitelist for code coverage -->
