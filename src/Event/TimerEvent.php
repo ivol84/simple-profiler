@@ -29,6 +29,14 @@ class TimerEvent extends Event
     /**
      * @return int
      */
+    public function getTotalTime()
+    {
+        return $this->totalTime;
+    }
+
+    /**
+     * @return int
+     */
     public function getMemoryPeakUsage()
     {
         return $this->memoryPeakUsage;
