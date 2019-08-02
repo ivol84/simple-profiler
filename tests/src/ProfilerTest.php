@@ -12,10 +12,12 @@ class ProfilerTest extends \PHPUnit_Framework_TestCase
      */
     function fireHandleProperListeners()
     {
-        Profiler::addListener($this->createListener(true));
-        Profiler::addListener($this->createListener(false));
+        $profiler = ProfilerFactory::create([
+            $this->createListener(true),
+            $this->createListener(false)
+        ]);
 
-        Profiler::create()->fire(new TimerEvent("test", 0, 0, 0));
+        $profiler->fire(new TimerEvent("test", 0, 0, 0));
     }
 
     private function createListener($isSupported)

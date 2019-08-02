@@ -2,7 +2,7 @@
 namespace SimpleProfiler\Integration;
 
 use SimpleProfiler\Listener\StreamOutputListener;
-use SimpleProfiler\Profiler;
+use SimpleProfiler\ProfilerFactory;
 use SimpleProfiler\Timer;
 
 class IntegrationTest extends \PHPUnit_Framework_TestCase
@@ -13,9 +13,9 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
      */
     public function timer()
     {
-        Profiler::addListener(new StreamOutputListener(fopen('php://stdout', 'w')));
+        $profiler = ProfilerFactory::create([new StreamOutputListener(fopen('php://stdout', 'w'))]);
         $timerObject = new TimerTestObject();
-        $timer = Timer::start("Test timer");
+        $timer = Timer::start("Test timer", $profiler);
         $timerObject->implicitWaitWithMemoryEating();
         $timer->stop();
     }
